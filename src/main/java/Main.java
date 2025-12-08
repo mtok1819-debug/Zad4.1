@@ -17,7 +17,6 @@ class Main {
     
     while (true) {
       System.out.println("1. Dodaj studenta");
-      System.out.println("2. Wypisz wszystkich studentow");
       System.out.println("0. Wyjdz z aplikacji");
       System.out.print("Wybierz opcje: ");
       
@@ -40,23 +39,11 @@ class Main {
             System.out.println("Blad podczas dodawania studenta: " + e.getMessage());
           }
           break;
-        case 2:
-          System.out.println("Lista studentow:");
-          try {
-            Collection<Student> students = service.getStudents();
-            for (Student current : students) {
-              System.out.println(current.ToString());
-            }
-          } catch (IOException e) {
-            System.out.println("Blad podczas odczytu: " + e.getMessage());
-          }
-          break;
         case 0:
-          System.out.println("Do widzenia!");
-          sc.close();
+          System.out.println("Wyjscie z aplikacji");
           return;
-        default:
-          System.out.println("Nieprawidlowa opcja, sprobuj ponownie.");
+          
+     
       }
       System.out.println();
     }
