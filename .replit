@@ -111,3 +111,6 @@ build = ["javac", "-classpath", ".:target/dependency/*", "-d", ".", "$(find . -t
 run = ["java", "-classpath", ".:target/dependency/*", "Main"]
 
 deploymentTarget = "cloudrun"
+
+[agent]
+expertMode = true
