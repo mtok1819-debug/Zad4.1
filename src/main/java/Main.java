@@ -15,6 +15,7 @@ class Main {
      Scanner scanner = new Scanner(System.in);
     Service s = new Service();
     int option = scanner.nextInt();
+    scanner.nextLine();
     switch(option) {
       case 1:
           try{
@@ -22,6 +23,7 @@ class Main {
             String name = scanner.nextLine();
             System.out.println("Podaj wiek studenta");
             int age = scanner.nextInt();
+            scanner.nextLine();
             s.addStudent(new Student(name, age));
             
           }
