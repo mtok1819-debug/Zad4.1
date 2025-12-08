@@ -5,7 +5,6 @@ run = "java -classpath .:target/dependency/* Main"
 entrypoint = "src/main/java/Main.java"
 
 hidden = ["**/*.class"]
-modules = ["java-graalvm22.3"]
 
 
 [packager]
@@ -115,26 +114,3 @@ deploymentTarget = "cloudrun"
 
 [agent]
 expertMode = true
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Student Database"
-
-[[workflows.workflow]]
-name = "Student Database"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd src/main/java && javac Main.java Service.java Student.java && java Main"
-
-[workflows.workflow.metadata]
-outputType = "console"

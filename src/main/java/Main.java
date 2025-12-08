@@ -7,58 +7,46 @@ Kod bazowy programu Commit4_0:
 • Klasa Student reprezentuje pojedynczego studenta (Imię, Wiek).
 */
 import java.util.Scanner;
-import java.util.Collection;
 import java.io.IOException;
 
 class Main {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    Service service = new Service();
+    Scanner sc=new Scanner(System.in);
+      while(true){
+       System.out.println("1.Dodaj studenta:");
+      System.out.println("0.Wypisz z aplikacji:");
+      
     
-    while(true) {
-      System.out.println("1. Dodaj studenta");
-      System.out.println("2. Wypisz wszystkich studentow");
-      System.out.println("0. Wyjdz z aplikacji");
-      System.out.print("Wybierz opcje: ");
+
+    switch;
+        {
+      case 1:
+        System.out.println("Dodaj studenta");
+        System.out.println("Podaj imie:");
+        String name=sc.nextLine();
+        System.out.println("Podaj wiek:");
+        int age=sc.nextInt();
+        Student student=new Student(name,age);
+        Service service=new Service();
+        service.addStudent(student);
+        break;
+      case 0:
+        System.out.println("Wypisuje z aplikacji");
+        break;
       
-      int choice = sc.nextInt();
-      sc.nextLine();
-      
-      switch(choice) {
-        case 1:
-          System.out.println("Dodaj studenta");
-          System.out.print("Podaj imie: ");
-          String name = sc.nextLine();
-          System.out.print("Podaj wiek: ");
-          int age = sc.nextInt();
-          sc.nextLine();
-          Student student = new Student(name, age);
-          try {
-            service.addStudent(student);
-            System.out.println("Student dodany!");
-          } catch (IOException e) {
-            System.out.println("Blad podczas dodawania studenta: " + e.getMessage());
-          }
-          break;
-        case 2:
-          System.out.println("Lista studentow:");
-          try {
-            Collection<Student> students = service.getStudents();
-            for(Student current : students) {
-              System.out.println(current.ToString());
-            }
-          } catch (IOException e) {
-            System.out.println("Blad podczas odczytu: " + e.getMessage());
-          }
-          break;
-        case 0:
-          System.out.println("Do widzenia!");
-          sc.close();
-          return;
-        default:
-          System.out.println("Nieznana opcja, sprobuj ponownie.");
+    }
+    }
+    try {
+      Service s = new Service();
+      s.addStudent(new Student("Krzysztof", 20));
+      s.addStudent(new Student("Janusz", 40));
+
+      var students = s.getStudents();
+      for(Student current : students) {
+        System.out.println(current.ToString());
       }
-      System.out.println();
+    } catch (IOException e) {
+      
     }
   }
 }
