@@ -11,7 +11,7 @@ import java.io.IOException;
 
 class Main {
   public static void main(String[] args) {
-  System.out.println("Wybierz opcje: 1. Dodaj studenta, 0. Wyjscie");
+  System.out.println("Wybierz opcje: 1. Dodaj studenta, 2.Wypisz studentów, 0. Wyjscie");
      Scanner scanner = new Scanner(System.in);
     Service s = new Service();
     int option = scanner.nextInt();
@@ -30,6 +30,17 @@ class Main {
           catch(IOException e){
             System.out.println("Wystapil blad");
           }
+          break;
+          case 2:
+            try{
+              java.util.Collection<Student> students = s.getStudents();
+              for(Student current : students) {
+                System.out.println(current.ToString());
+              }
+            } catch(IOException e){
+              System.out.println("Wystapil blad");
+            }
+            break;
             
           case 0:
             System.out.println("Wyjscie");
