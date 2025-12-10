@@ -2,3 +2,4 @@ Krzysztof 20
 Janusz 40
 Andrzej 22
 Michal 44
+Mikolaj 15
