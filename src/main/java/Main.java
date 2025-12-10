@@ -16,7 +16,6 @@ class Main {
     Service s = new Service();
     int option = scanner.nextInt();
     scanner.nextLine();
-    while (true){
     switch(option) {
       case 1:
           try{
@@ -31,7 +30,7 @@ class Main {
           catch(IOException e){
             System.out.println("Wystapil blad");
           }
-          
+          break;
           case 2:
             try{
               java.util.Collection<Student> students = s.getStudents();
@@ -41,7 +40,7 @@ class Main {
             } catch(IOException e){
               System.out.println("Wystapil blad");
             }
-            
+            break;
             
           case 0:
             System.out.println("Wyjscie");
@@ -50,4 +49,3 @@ class Main {
     }
 }
     
-}
